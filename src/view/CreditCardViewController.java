@@ -36,7 +36,7 @@ import view.util.Utils;
 
 public class CreditCardViewController implements Initializable {
 
-    private CardServices service;
+    private CardServices service = new CardServices();
 
     @FXML
     private TextField txtValue;
@@ -128,6 +128,7 @@ public class CreditCardViewController implements Initializable {
         columnValue.setCellValueFactory(new PropertyValueFactory<>("value"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         Utils.formatTableColumnDate(columnDate, "dd/MM/yyyy");
+        updateTableView();
     }
 
     private void initRemoveButtons() {

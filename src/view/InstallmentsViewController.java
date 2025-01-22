@@ -4,6 +4,7 @@ import config.DbIntegrityException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
@@ -98,9 +99,16 @@ public class InstallmentsViewController implements Initializable {
             double value = Utils.formatNumber(txtTotalValue.getText());
             int number = Utils.tryParseToInt(txtInstallments.getText());
             int paid = (txtInstallmentsPaid.getText().equals("")) ? 0 : Utils.tryParseToInt(txtInstallmentsPaid.getText());
-            Instant instant = txtDatePayment.getValue().atStartOfDay().atZone(ZoneId.systemDefault()).toInstant();
-
-            Installments obj = new Installments(null, item, value, number, paid, Date.from(instant));
+            
+            LocalDate localDate = txtDatePayment.getValue();
+            
+            Date date = null;
+            if (localDate != null) {
+                Instant instant = localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant() ;
+                date = Date.from(instant);
+            }
+                
+            Installments obj = new Installments(null, item, value, number, paid, date);
             services.saveOrUpdate(obj);
             updateTableView();
         }

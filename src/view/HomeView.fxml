@@ -14,7 +14,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#onMenuItemGraphicsAction" text="Graficos" />
               <MenuItem mnemonicParsing="false" onAction="#onMenuItemContaAction" text="Contas do mes" />
                   <MenuItem mnemonicParsing="false" onAction="#onMenuItemInstallmentsAction" text="Items Parcelados" />
-              <MenuItem mnemonicParsing="false" onAction="#onMenuItemCreditAction" text="Historico d cartão" />
                </items>
             </Menu>
         </menus>

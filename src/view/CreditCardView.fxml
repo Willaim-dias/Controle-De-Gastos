@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="1000.0" stylesheets="@styles/MainStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CreditCardViewController">
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="865.0" stylesheets="@styles/MainStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CreditCardViewController">
    <children>
       <GridPane layoutX="14.0" layoutY="99.0" prefHeight="77.0" prefWidth="500.0">
         <columnConstraints>
@@ -73,7 +73,7 @@
       </Label>
       <ComboBox fx:id="comboBoxDate" layoutX="571.0" layoutY="138.0" onAction="#updateListView" prefHeight="37.0" prefWidth="250.0" promptText=" Filtrar" />
       <Label layoutX="548.0" layoutY="500.0" prefHeight="53.0" prefWidth="295.0" />
-      <Pane layoutY="523.0" prefHeight="30.0" prefWidth="1000.0" styleClass="title-back" />
+      <Pane layoutY="523.0" prefHeight="30.0" prefWidth="865.0" styleClass="title-back" />
       <ListView fx:id="listFilter" layoutX="548.0" layoutY="200.0" prefHeight="220.0" prefWidth="300.0" styleClass="listView" />
       <Label fx:id="labelFilterTotal" alignment="CENTER" layoutX="571.0" layoutY="443.0" prefHeight="47.0" prefWidth="250.0" styleClass="listView" />
    </children>

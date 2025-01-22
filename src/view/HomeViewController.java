@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import model.services.AccountServices;
-import model.services.CardServices;
 import model.services.InstallmentsServices;
 
 public class HomeViewController implements Initializable {
@@ -25,13 +24,6 @@ public class HomeViewController implements Initializable {
         });
     }
 
-    public void onMenuItemCreditAction() {
-        loadPanel("/view/CreditCardView.fxml", (CreditCardViewController controller) -> {
-            controller.setCardServices(new CardServices());
-            controller.updateTableView();
-        });
-    }
-    
     public void onMenuItemGraphicsAction(){
         loadPanel("/view/GraphicsView.fxml", (GraphicsViewController controller) -> {
             controller.setAccountServices(new AccountServices());

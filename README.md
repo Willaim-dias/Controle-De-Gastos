@@ -24,4 +24,3 @@ SQLite é um sistema de gerenciamento de banco de dados relacional leve e autoss
 4. **Bibliotecas**: Certifique-se de baixar as bibliotecas necessárias.
 5. **Banco de Dados**: Se estiver usando um banco de dados diferente, modifique a classe `DB` conforme necessário.
 # Controle-de-Gastos
-# Controle-De-Gastos

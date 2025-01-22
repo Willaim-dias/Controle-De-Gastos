@@ -31,8 +31,11 @@ public class InstallmentsJDBC implements InstallmentsDao {
             st.setDouble(2, obj.getTotalValue());
             st.setInt(3, obj.getInstallments());
             st.setInt(4, obj.getInstallmentsPaid());
-            st.setDate(5, new java.sql.Date(obj.getLastPayment().getTime()));
-
+            
+            if (obj.getLastPayment() != null) {
+                st.setDate(5, new java.sql.Date(obj.getLastPayment().getTime()));
+            }
+            
             st.executeUpdate();
         } catch (SQLException e) {
             Alerts.showAlert("Erro", "", e.getMessage(), Alert.AlertType.ERROR);

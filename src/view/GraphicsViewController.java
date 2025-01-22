@@ -41,6 +41,10 @@ public class GraphicsViewController implements Initializable {
         showWindow("/view/SpendingHistoryView.fxml","Historico de Gastos");
     }
 
+    public void onBtShowHistoryCard() {
+        showWindow("/view/CreditCardView.fxml","Historico do Cartão");
+    }
+    
     public void onBtShowSpendingForecast() {
         showWindow("/view/SpendingForecast.fxml","Previsao de Gastos");
     }
