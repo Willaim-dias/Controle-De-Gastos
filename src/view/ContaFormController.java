@@ -46,7 +46,9 @@ public class ContaFormController implements Initializable {
             throw new IllegalStateException("Service was null");
         }
         try {
+            account = null;
             account = getFormData();
+            System.out.println(account.getValue());
             services.saveOrUpdate(account);
             notifyDataChangeListeners();
             Utils.currentStage(event).close();
@@ -86,7 +88,7 @@ public class ContaFormController implements Initializable {
 
         obj.setId(Utils.tryParseToInt(txtId.getText()));
         obj.setAccount(txtAccount.getText());
-        obj.setValue(Utils.formatNumber(txtValue.getText()));
+        obj.setValue(Utils.tryParseToDouble(txtValue.getText()));
               
         return obj;
     }

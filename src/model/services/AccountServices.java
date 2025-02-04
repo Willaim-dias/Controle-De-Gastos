@@ -7,7 +7,7 @@ import model.entities.Account;
 
 public class AccountServices {
     
-    private AccountDao dao = DaoFactory.createAccountDao();
+    private final AccountDao dao = DaoFactory.createAccountDao();
     
     public List<Account> findAll() {
         return dao.findAll();
