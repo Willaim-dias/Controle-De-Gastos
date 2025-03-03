@@ -90,7 +90,7 @@ public class Installments {
     }
     
     public double installmentValue(double value,int number) {
-        return value/number;
+        return Math.round(value/number);
     }
     
     public int remainingInstallments(int installmentsA,int installmentsB) {

@@ -1,14 +1,10 @@
 package view.util;
 
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
@@ -117,36 +113,4 @@ public class Utils {
         });
     }
 
-    public static boolean validation(String passwordUser, String passowordDb) {
-        return passwordUser.equals(passowordDb);
-    }
-    
-    public static String codeUser(String userName) {
-        String initials = userName.substring(0, 2).toUpperCase();
-        Random random = new Random();
-        int number = 1000 + random.nextInt(9000);
-        return initials + number;
-    }
-    
-    public static String hashPassword(String password) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] encodedHash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-
-            StringBuilder hexHash = new StringBuilder();
-
-            for (byte b : encodedHash) {
-
-                String hex = Integer.toHexString(0xff & b);
-                if (hex.length() == 1) {
-                    hexHash.append('0');
-                }
-                hexHash.append(hex);
-            }
-            return hexHash.toString();
-        } catch (NoSuchAlgorithmException e) {
-        }
-        return "";
-    }
-    
 }

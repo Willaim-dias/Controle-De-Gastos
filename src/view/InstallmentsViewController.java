@@ -30,10 +30,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.entities.Installments;
 import model.services.InstallmentsServices;
+import view.listeners.DataChangeListener;
 import view.util.Alerts;
 import view.util.Utils;
 
-public class InstallmentsViewController implements Initializable {
+public class InstallmentsViewController extends DataChangeListener implements Initializable {
 
     private InstallmentsServices services;
 
@@ -151,6 +152,7 @@ public class InstallmentsViewController implements Initializable {
             InstallmentsFormController controller = loader.getController();
             controller.setInstallments(obj);
             controller.setService(services);
+            controller.subscriberDataChangeListener(this);
             controller.updateFormData();
 
             Stage dialogStage = new Stage();
@@ -195,5 +197,10 @@ public class InstallmentsViewController implements Initializable {
 
         obsList = FXCollections.observableArrayList(newList);
         tableInstallments.setItems(obsList);
+    }
+
+    @Override
+    public void onDataChanged() {
+        updateTableView();
     }
 }

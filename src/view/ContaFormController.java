@@ -48,7 +48,6 @@ public class ContaFormController implements Initializable {
         try {
             account = null;
             account = getFormData();
-            System.out.println(account.getValue());
             services.saveOrUpdate(account);
             notifyDataChangeListeners();
             Utils.currentStage(event).close();

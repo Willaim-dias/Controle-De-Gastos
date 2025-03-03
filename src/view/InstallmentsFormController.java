@@ -4,14 +4,18 @@ import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import model.entities.Installments;
 import model.services.InstallmentsServices;
+import view.listeners.DataChangeListener;
 import view.util.Utils;
 
 public class InstallmentsFormController implements Initializable {
@@ -19,6 +23,8 @@ public class InstallmentsFormController implements Initializable {
     private Installments installments;
     private InstallmentsServices service;
 
+    private final List<DataChangeListener> DataChangeListeners = new ArrayList<>();
+    
     @FXML
     private DatePicker txtDatePayment;
 
@@ -48,8 +54,10 @@ public class InstallmentsFormController implements Initializable {
     }
 
     @FXML
-    public void onBtUpdateData() {
+    public void onBtUpdateData(ActionEvent event) {
         service.saveOrUpdate(getFormData());
+        notifyDataChangeListeners();
+        Utils.currentStage(event).close();
     }
 
     public void updateFormData() {
@@ -88,4 +96,13 @@ public class InstallmentsFormController implements Initializable {
         return installments;
     }
 
+    public void subscriberDataChangeListener(DataChangeListener  listener) {
+        DataChangeListeners.add(listener);
+    }
+    
+    private void notifyDataChangeListeners() {
+        for (DataChangeListener listener : DataChangeListeners) {
+            listener.onDataChanged();
+        }
+    }
 }
