@@ -175,6 +175,7 @@ public class InstallmentsViewController extends DataChangeListener implements In
         columnInstallmentsPaid.setCellValueFactory(new PropertyValueFactory<>("InstallmentsPaid"));
         columnRemainingInstallments.setCellValueFactory(new PropertyValueFactory<>("remainingInstallments"));
         columnLastPayment.setCellValueFactory(new PropertyValueFactory<>("lastPayment"));
+        Utils.formatTableColumnDate(columnLastPayment, "dd/MM/yyyy");
     }
 
     @FXML

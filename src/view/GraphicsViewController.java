@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -46,7 +47,7 @@ public class GraphicsViewController implements Initializable {
     }
     
     public void onBtShowSpendingForecast() {
-        showWindow("/view/SpendingForecast.fxml","Previsao de Gastos");
+        
     }
     
     @Override
@@ -98,6 +99,7 @@ public class GraphicsViewController implements Initializable {
             Stage dialogStage = new Stage();
             dialogStage.setTitle(title);
             dialogStage.setScene(new Scene(anchorPane));
+            dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("/imgs/icons/controlpanel.png")));
             dialogStage.setResizable(false);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.showAndWait();

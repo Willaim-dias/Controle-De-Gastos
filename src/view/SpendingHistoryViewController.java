@@ -17,7 +17,6 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,6 +24,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import model.entities.Extract;
 import model.services.ExtractServices;
 import view.util.Alerts;
+import view.util.Utils;
 
 public class SpendingHistoryViewController implements Initializable {
 
@@ -45,9 +45,6 @@ public class SpendingHistoryViewController implements Initializable {
     @FXML
     private PieChart pieChartExpenses;
 
-    @FXML
-    private Label labelSum;
-
     private ObservableList<Extract> obsList;
 
     @Override
@@ -64,6 +61,7 @@ public class SpendingHistoryViewController implements Initializable {
     private void initializeNodes() {
         columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
         columnDate.setCellValueFactory(new PropertyValueFactory<>("date"));
+        Utils.formatTableColumnDate(columnDate, "dd/MM/yyyy");
         updateTableView();
     }
 
