@@ -15,7 +15,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="labelValue" alignment="CENTER" layoutX="695.0" layoutY="86.0" prefHeight="53.0" prefWidth="205.0" styleClass="border">
+      <Label fx:id="labelValue" alignment="CENTER" layoutX="695.0" layoutY="86.0" prefHeight="53.0" prefWidth="205.0" styleClass="border" text="--------">
          <font>
             <Font size="18.0" />
          </font>
@@ -27,11 +27,6 @@
       </Button>
       <Pane layoutY="523.0" prefHeight="30.0" prefWidth="1000.0" styleClass="title-back" />
       <Button layoutX="550.0" layoutY="203.0" mnemonicParsing="false" onAction="#onBtShowHistory" prefHeight="53.0" prefWidth="251.0" text="Histórico de Gastos">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="550.0" layoutY="335.0" mnemonicParsing="false" onAction="#onBtShowSpendingForecast" prefHeight="53.0" prefWidth="251.0" text="Em dev...">
          <font>
             <Font size="16.0" />
          </font>

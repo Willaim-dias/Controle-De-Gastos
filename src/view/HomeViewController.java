@@ -54,7 +54,6 @@ public class HomeViewController implements Initializable {
             T conttroler = loader.getController();
             initializingAction.accept(conttroler);
         } catch (IOException e) { 
-            e.printStackTrace();
             System.out.println(e.getMessage());
         }
     }

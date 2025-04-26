@@ -20,7 +20,7 @@ public class Main extends Application {
     
             mainScene = new Scene(anchorPane);
             primaryStage.setScene(mainScene);
-            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/imgs/icons/controlpanel.png")));
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/imgs/icons/processDevelopment.png")));
             primaryStage.setResizable(false);
             primaryStage.setTitle("Home");
             primaryStage.show();

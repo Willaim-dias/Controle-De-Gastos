@@ -17,9 +17,7 @@ CREATE TABLE IF NOT EXISTS "tb_history" (
 	"Date_save"	DATE NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
-COMMIT;
-
-CREATE TABLE "tb_installments" (
+CREATE TABLE IF NOT EXISTS "tb_installments" (
 	"id"	INTEGER,
 	"item"	TEXT NOT NULL,
 	"total_value"	REAL NOT NULL,
@@ -28,3 +26,4 @@ CREATE TABLE "tb_installments" (
 	"last_payment"	DATE,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+COMMIT;

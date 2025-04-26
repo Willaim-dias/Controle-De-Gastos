@@ -46,10 +46,6 @@ public class GraphicsViewController implements Initializable {
         showWindow("/view/CreditCardView.fxml","Historico do Cartão");
     }
     
-    public void onBtShowSpendingForecast() {
-        
-    }
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -57,10 +53,9 @@ public class GraphicsViewController implements Initializable {
 
     private boolean showValue = false;
     
-    @FXML
-    private void totalValueShow() {
+    public void totalValueShow() {
         if (showValue) {
-            labelValue.setText("");
+            labelValue.setText("--------");
             showValue = false;
         } else {
             labelValue.setText("R$ "+String.format("%.2f", sum));
@@ -99,7 +94,7 @@ public class GraphicsViewController implements Initializable {
             Stage dialogStage = new Stage();
             dialogStage.setTitle(title);
             dialogStage.setScene(new Scene(anchorPane));
-            dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("/imgs/icons/controlpanel.png")));
+            dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("/imgs/icons/processDevelopment.png")));
             dialogStage.setResizable(false);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.showAndWait();
